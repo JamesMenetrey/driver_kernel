@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0F77F755-F731-40B1-BF69-4AB65A6EBA40}</ProjectGuid>
+    <TemplateGuid>{1bc93793-694f-48fe-9372-81e2b05556fd}</TemplateGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <Configuration>Debug</Configuration>
+    <Platform Condition="'$(Platform)' == ''">Win32</Platform>
+    <RootNamespace>WeGotSkills_Kernel</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <TargetVersion>
+    </TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>KMDF</DriverType>
+    <DriverTargetPlatform>Desktop</DriverTargetPlatform>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <TargetVersion>
+    </TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>KMDF</DriverType>
+    <DriverTargetPlatform>Desktop</DriverTargetPlatform>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <TargetVersion>
+    </TargetVersion>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>KMDF</DriverType>
+    <DriverTargetPlatform>Desktop</DriverTargetPlatform>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <TargetVersion>
+    </TargetVersion>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>WindowsKernelModeDriver10.0</PlatformToolset>
+    <ConfigurationType>Driver</ConfigurationType>
+    <DriverType>KMDF</DriverType>
+    <DriverTargetPlatform>Desktop</DriverTargetPlatform>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+    <OutDir>$(ProjectDir)Builds\$(ConfigurationName)\</OutDir>
+    <ApiValidator_Enable>false</ApiValidator_Enable>
+    <TargetName>$(TargetName)</TargetName>
+    <TargetExt>$(TargetExt)</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+    <OutDir>$(ProjectDir)Builds\$(ConfigurationName)\</OutDir>
+    <ApiValidator_Enable>false</ApiValidator_Enable>
+    <TargetName>$(TargetName)</TargetName>
+    <TargetExt>$(TargetExt)</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+    <OutDir>$(ProjectDir)Builds\$(ConfigurationName)\</OutDir>
+    <ApiValidator_Enable>false</ApiValidator_Enable>
+    <TargetName>Razer2</TargetName>
+    <TargetExt>$(TargetExt)</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DebuggerFlavor>DbgengKernelDebugger</DebuggerFlavor>
+    <OutDir>$(ProjectDir)Builds\$(ConfigurationName)\</OutDir>
+    <ApiValidator_Enable>false</ApiValidator_Enable>
+    <TargetName>$(TargetName)</TargetName>
+    <TargetExt>$(TargetExt)</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <WppEnabled>true</WppEnabled>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <UndefinePreprocessorDefinitions>%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
+      <SupportJustMyCode>false</SupportJustMyCode>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <AssemblerOutput>All</AssemblerOutput>
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>RMDIR /S /Q "$(TargetDir)$(AssemblyName)\"</Command>
+    </PostBuildEvent>
+    <Link>
+      <SuppressStartupBanner>false</SuppressStartupBanner>
+      <EntryPointSymbol>DriverEntry</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <WppEnabled>true</WppEnabled>
+      <SupportJustMyCode>false</SupportJustMyCode>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <AssemblerOutput>All</AssemblerOutput>
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>RMDIR /S /Q "$(TargetDir)$(AssemblyName)\"</Command>
+    </PostBuildEvent>
+    <Link>
+      <SuppressStartupBanner>false</SuppressStartupBanner>
+      <EntryPointSymbol>DriverEntry</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <WppEnabled>true</WppEnabled>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <AssemblerOutput>All</AssemblerOutput>
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>RMDIR /S /Q "$(TargetDir)$(AssemblyName)\"</Command>
+    </PostBuildEvent>
+    <Link>
+      <SuppressStartupBanner>false</SuppressStartupBanner>
+      <EntryPointSymbol>DriverEntry</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <WppEnabled>true</WppEnabled>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <AssemblerOutput>All</AssemblerOutput>
+      <CompileAs>CompileAsC</CompileAs>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>RMDIR /S /Q "$(TargetDir)$(AssemblyName)\"</Command>
+    </PostBuildEvent>
+    <Link>
+      <SuppressStartupBanner>false</SuppressStartupBanner>
+      <EntryPointSymbol>DriverEntry</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <FilesToPackage Include="$(TargetPath)" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Callbacks.c" />
+    <ClCompile Include="Driver.c" />
+    <ClCompile Include="Memory.c" />
+    <ClCompile Include="Requests.c" />
+    <ClCompile Include="Utils.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Callbacks.h" />
+    <ClInclude Include="Driver.h" />
+    <ClInclude Include="Memory.h" />
+    <ClInclude Include="ntos.h" />
+    <ClInclude Include="Requests.h" />
+    <ClInclude Include="Utils.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  </ImportGroup>
+</Project>
